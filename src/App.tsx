@@ -48,8 +48,8 @@ const App: React.FC = () => {
 
 	const {
 		data: nearbyPositions,
-		isLoading,
-		isError,
+		// isLoading,
+		// isError,
 	} = useQuery(
 		[clickedPos.lat, clickedPos.lng],
 		() => fetchNearbyPlaces(clickedPos.lat, clickedPos.lng),
@@ -62,7 +62,7 @@ const App: React.FC = () => {
 	const {
 		data: markerWeather,
 		isLoading: isLoadingMarkerWeather,
-		isError: isErrorMarkerWeather,
+		// isError: isErrorMarkerWeather,
 	} = useQuery([selectedMarker.id], () => fetchWeather(selectedMarker), {
 		enabled: !!selectedMarker.id,
 		refetchOnWindowFocus: false,
